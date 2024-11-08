@@ -1,0 +1,74 @@
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+
+const ImageGallery = () => {
+  // Sample image and text data
+  const galleryData = [
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 1',
+      description: 'This is the description for the first image in the gallery. It can be quite long and take up multiple lines.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 2',
+      description: 'This is the description for the second image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 3',
+      description: 'This is the description for the third image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 4',
+      description: 'This is the description for the fourth image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 5',
+      description: 'This is the description for the fifth image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 6',
+      description: 'This is the description for the sixth image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 7',
+      description: 'This is the description for the seventh image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 8',
+      description: 'This is the description for the eighth image in the gallery.'
+    },
+    {
+      image: '/api/placeholder/320/240',
+      title: 'Image 9',
+      description: 'This is the description for the ninth image in the gallery.'
+    }
+  ];
+
+  return (
+    <Card className="w-full max-w-4xl">
+      <CardHeader>
+        <CardTitle>Minimalist Image Gallery</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="grid grid-cols-3 gap-4">
+          {galleryData.map((item, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <img src={item.image} alt={item.title} className="w-full h-auto" />
+              <h3 className="mt-2 font-medium">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default ImageGallery;
